@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <block>
 	<name>Variable Sink</name>
-	<key>variable_sink_x</key>
+	<key>var_sink_x</key>
 	<category>[Thesis]/Variable</category>
-	<import>import variable
+	<import>from var.var_sink_x import var_sink_$(type.fcn)
 import logging</import>
 
-	<make>variable.variable_sink_$(type.fcn)(
+	<make>var_sink_$(type.fcn)(
 		num_inputs=$num_inputs,
 		log_level=$log_level, 
  		log_filename=$log_filename

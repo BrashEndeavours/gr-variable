@@ -20,10 +20,10 @@
 ########################################################################
 # Check if there is C++ code at all
 ########################################################################
-if(NOT variable_sources)
+if(NOT var_sources)
 	MESSAGE(STATUS "No C++ sources... skipping swig/")
 	return()
-endif(NOT variable_sources)
+endif(NOT var_sources)
 
 ########################################################################
 # Include swig generation macros
@@ -43,23 +43,23 @@ foreach(incdir ${GNURADIO_RUNTIME_INCLUDE_DIRS})
     list(APPEND GR_SWIG_INCLUDE_DIRS ${incdir}/gnuradio/swig)
 endforeach(incdir)
 
-set(GR_SWIG_LIBRARIES gnuradio-variable)
-set(GR_SWIG_DOC_FILE ${CMAKE_CURRENT_BINARY_DIR}/variable_swig_doc.i)
+set(GR_SWIG_LIBRARIES gnuradio-var)
+set(GR_SWIG_DOC_FILE ${CMAKE_CURRENT_BINARY_DIR}/var_swig_doc.i)
 set(GR_SWIG_DOC_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
-GR_SWIG_MAKE(variable_swig variable_swig.i)
+GR_SWIG_MAKE(var_swig var_swig.i)
 
 ########################################################################
 # Install the build swig module
 ########################################################################
-GR_SWIG_INSTALL(TARGETS variable_swig DESTINATION ${GR_PYTHON_DIR}/variable)
+GR_SWIG_INSTALL(TARGETS var_swig DESTINATION ${GR_PYTHON_DIR}/var)
 
 ########################################################################
 # Install swig .i files for development
 ########################################################################
 install(
     FILES
-    variable_swig.i
-    ${CMAKE_CURRENT_BINARY_DIR}/variable_swig_doc.i
-    DESTINATION ${GR_INCLUDE_DIR}/variable/swig
+    var_swig.i
+    ${CMAKE_CURRENT_BINARY_DIR}/var_swig_doc.i
+    DESTINATION ${GR_INCLUDE_DIR}/var/swig
 )

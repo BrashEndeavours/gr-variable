@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2017 SLt Blake Mackey
+# Copyright 2017 SLt Blake Mackey.
 #
 # This is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,9 +26,9 @@ import logging
 import os
 import uuid
 
-class _variable_sink_x(gr.sync_block):
+class _var_sink_x(gr.sync_block):
     """
-    docstring for block _variable_sink_x
+    docstring for block _var_sink_x
     """
     def __init__(self,
                  num_inputs,
@@ -105,46 +105,46 @@ class _variable_sink_x(gr.sync_block):
     def get_data_size(self):
         return self.array.shape
 
-class variable_sink_b(_variable_sink_x):
+class var_sink_b(_var_sink_x):
     """
-    docstring for block variable_sink_b
+    docstring for block var_sink_b
     """
     def __init__(self, num_inputs, log_level, log_filename):
-        super(variable_sink_b, self).__init__(num_inputs, 
+        super(var_sink_b, self).__init__(num_inputs, 
                                               log_level, 
                                               log_filename,
-                                              name="variable_sink_b",
+                                              name="var_sink_b",
                                               dtype=np.int8)
 
-class variable_sink_s(_variable_sink_x):
+class var_sink_s(_var_sink_x):
     """
-    docstring for block variable_sink_s
+    docstring for block var_sink_s
     """
     def __init__(self, num_inputs, log_level, log_filename):
-        super(variable_sink_b, self).__init__(num_inputs, 
+        super(var_sink_b, self).__init__(num_inputs, 
                                               log_level, 
                                               log_filename,
-                                              name="variable_sink_s",
+                                              name="var_sink_s",
                                               dtype=np.int16)
 
-class variable_sink_i(_variable_sink_x):
+class var_sink_i(_var_sink_x):
     """
-    docstring for block variable_sink_i
+    docstring for block var_sink_i
     """
     def __init__(self, num_inputs, log_level, log_filename):
-        super(variable_sink_b, self).__init__(num_inputs, 
+        super(var_sink_b, self).__init__(num_inputs, 
                                               log_level, 
                                               log_filename,
-                                              name="variable_sink_i",
+                                              name="var_sink_i",
                                               dtype=np.int32)
 
-class variable_sink_f(_variable_sink_x):
+class var_sink_f(_var_sink_x):
     """
-    docstring for block variable_sink_f
+    docstring for block var_sink_f
     """
     def __init__(self, num_inputs, log_level, log_filename):
-        super(variable_sink_b, self).__init__(num_inputs, 
+        super(var_sink_b, self).__init__(num_inputs, 
                                               log_level, 
                                               log_filename,
-                                              name="variable_sink_f",
+                                              name="var_sink_f",
                                               dtype=np.float32)

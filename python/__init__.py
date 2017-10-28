@@ -19,17 +19,17 @@
 # The presence of this file turns this directory into a Python package
 
 '''
-This is the GNU Radio VARIABLE module. Place your Python package
+This is the GNU Radio VAR module. Place your Python package
 description here (python/__init__.py).
 '''
 
-# import swig generated symbols into the variable namespace
+# import swig generated symbols into the var namespace
 try:
 	# this might fail if the module is python-only
-	from variable_swig import *
+	from var_swig import *
 except ImportError:
 	pass
 
 # import any pure python here
-from variable_sink_x import variable_sink_x
+from var_sink_x import _var_sink_x
 #

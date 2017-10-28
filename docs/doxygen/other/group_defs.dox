@@ -1,6 +1,6 @@
 /*!
- * \defgroup block GNU Radio VARIABLE C++ Signal Processing Blocks
- * \brief All C++ blocks that can be used from the VARIABLE GNU Radio
+ * \defgroup block GNU Radio VAR C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the VAR GNU Radio
  *        module are listed here or in the subcategories below.
  *
  */

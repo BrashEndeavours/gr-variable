@@ -25,21 +25,21 @@ include(GrPlatform) #define LIB_SUFFIX
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
-list(APPEND variable_sources
+list(APPEND var_sources
 )
 
-set(variable_sources "${variable_sources}" PARENT_SCOPE)
-if(NOT variable_sources)
+set(var_sources "${var_sources}" PARENT_SCOPE)
+if(NOT var_sources)
 	MESSAGE(STATUS "No C++ sources... skipping lib/")
 	return()
-endif(NOT variable_sources)
+endif(NOT var_sources)
 
-add_library(gnuradio-variable SHARED ${variable_sources})
-target_link_libraries(gnuradio-variable ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
-set_target_properties(gnuradio-variable PROPERTIES DEFINE_SYMBOL "gnuradio_variable_EXPORTS")
+add_library(gnuradio-var SHARED ${var_sources})
+target_link_libraries(gnuradio-var ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
+set_target_properties(gnuradio-var PROPERTIES DEFINE_SYMBOL "gnuradio_var_EXPORTS")
 
 if(APPLE)
-    set_target_properties(gnuradio-variable PROPERTIES
+    set_target_properties(gnuradio-var PROPERTIES
         INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/lib"
     )
 endif(APPLE)
@@ -48,7 +48,7 @@ endif(APPLE)
 # Install built library files
 ########################################################################
 include(GrMiscUtils)
-GR_LIBRARY_FOO(gnuradio-variable RUNTIME_COMPONENT "variable_runtime" DEVEL_COMPONENT "variable_devel")
+GR_LIBRARY_FOO(gnuradio-var RUNTIME_COMPONENT "var_runtime" DEVEL_COMPONENT "var_devel")
 
 ########################################################################
 # Build and register unit test
@@ -57,22 +57,22 @@ include(GrTest)
 
 include_directories(${CPPUNIT_INCLUDE_DIRS})
 
-list(APPEND test_variable_sources
-    ${CMAKE_CURRENT_SOURCE_DIR}/test_variable.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_variable.cc
+list(APPEND test_var_sources
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_var.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/qa_var.cc
 )
 
-add_executable(test-variable ${test_variable_sources})
+add_executable(test-var ${test_var_sources})
 
 target_link_libraries(
-  test-variable
+  test-var
   ${GNURADIO_RUNTIME_LIBRARIES}
   ${Boost_LIBRARIES}
   ${CPPUNIT_LIBRARIES}
-  gnuradio-variable
+  gnuradio-var
 )
 
-GR_ADD_TEST(test_variable test-variable)
+GR_ADD_TEST(test_var test-var)
 
 ########################################################################
 # Print summary

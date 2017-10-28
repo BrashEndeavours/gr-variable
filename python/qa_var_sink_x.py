@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2017 SLt Blake Mackey
+# Copyright 2017 SLt Blake Mackey.
 #
 # This is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,12 +21,9 @@
 
 from gnuradio import gr, gr_unittest
 from gnuradio import blocks
-from variable_sink_x import variable_sink_b
-from variable_sink_x import variable_sink_s
-from variable_sink_x import variable_sink_i
-from variable_sink_x import variable_sink_f
+from var_sink_b import var_sink_b
 
-class _qa_variable_sink_x (gr_unittest.TestCase):
+class _qa_var_sink_x (gr_unittest.TestCase):
 
     def setUp (self):
         self.tb = gr.top_block ()
@@ -39,24 +36,24 @@ class _qa_variable_sink_x (gr_unittest.TestCase):
         self.tb.run ()
         # check data
 
-class qa_variable_sink_b (_qa_variable_sink_x):
+class qa_var_sink_b (_qa_var_sink_x):
     def __init__(self):
-        super(qa_variable_sink_b, self).__init__()
+        super(qa_var_sink_b, self).__init__()
 
-class qa_variable_sink_s (_qa_variable_sink_x):
+class qa_var_sink_s (_qa_var_sink_x):
     def __init__(self):
-        super(qa_variable_sink_s, self).__init__()
+        super(qa_var_sink_s, self).__init__()
 
-class qa_variable_sink_i (_qa_variable_sink_x):
+class qa_var_sink_i (_qa_var_sink_x):
     def __init__(self):
-        super(qa_variable_sink_i, self).__init__()
+        super(qa_var_sink_i, self).__init__()
 
-class qa_variable_sink_f (_qa_variable_sink_x):
+class qa_var_sink_f (_qa_var_sink_x):
     def __init__(self):
-        super(qa_variable_sink_f, self).__init__()
+        super(qa_var_sink_f, self).__init__()
 
 if __name__ == '__main__':
-    gr_unittest.run(qa_variable_sink_b, "qa_variable_sink_b.xml")
-    gr_unittest.run(qa_variable_sink_s, "qa_variable_sink_s.xml")
-    gr_unittest.run(qa_variable_sink_i, "qa_variable_sink_i.xml")    
-    gr_unittest.run(qa_variable_sink_f, "qa_variable_sink_f.xml")
+    gr_unittest.run(qa_var_sink_b, "qa_var_sink_b.xml")
+    gr_unittest.run(qa_var_sink_s, "qa_var_sink_s.xml")
+    gr_unittest.run(qa_var_sink_i, "qa_var_sink_i.xml")    
+    gr_unittest.run(qa_var_sink_f, "qa_var_sink_f.xml") 

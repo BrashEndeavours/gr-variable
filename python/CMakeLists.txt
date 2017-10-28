@@ -31,7 +31,7 @@ endif()
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
-    variable_sink_x.py DESTINATION ${GR_PYTHON_DIR}/variable
+    var_sink_x.py DESTINATION ${GR_PYTHON_DIR}/var
 )
 
 ########################################################################
@@ -39,6 +39,6 @@ GR_PYTHON_INSTALL(
 ########################################################################
 include(GrTest)
 
-set(GR_TEST_TARGET_DEPS gnuradio-variable)
+set(GR_TEST_TARGET_DEPS gnuradio-var)
 set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
-GR_ADD_TEST(qa_variable_sink_x ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_variable_sink_x.py)
+GR_ADD_TEST(qa_var_sink_x ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_var_sink_x.py)

@@ -18,5 +18,5 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    variable_sink_x.xml DESTINATION share/gnuradio/grc/blocks
+    var_sink_x.xml DESTINATION share/gnuradio/grc/blocks
 )

@@ -1,11 +1,11 @@
 /* -*- c++ -*- */
 
-#define VARIABLE_API
+#define VAR_API
 
 %include "gnuradio.i"			// the common stuff
 
 //load generated python docstrings
-%include "variable_swig_doc.i"
+%include "var_swig_doc.i"
 
 %{
 %}
