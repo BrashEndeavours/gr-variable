@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>top_block</value>
+      <value>minimal_working_example</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -128,7 +128,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(232, 292)</value>
+      <value>(232, 316)</value>
     </param>
     <param>
       <key>_rotation</key>
